@@ -7,11 +7,15 @@
     <groupId>ru.trade.helper.web</groupId>
     <artifactId>trade-helper-web</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
     <modules>
         <module>api-gateway</module>
         <module>eureka-server</module>
         <module>users-management</module>
+        <module>git-config-server</module>
     </modules>
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
