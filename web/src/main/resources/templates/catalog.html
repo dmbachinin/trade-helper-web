@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategy Management</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Strategy Management</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="stocks.html">View Stocks</a></li>
+                    <li><a href="history.html">History</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h2>Create or Manage Strategies</h2>
+                <form action="/create_strategy" method="post">
+                    <fieldset>
+                        <legend>Assets</legend>
+                        <label for="asset">Asset (Ticker):</label>
+                        <input type="text" id="asset" name="asset" placeholder="e.g., APPL, GOOGL" required>
+                        <label for="min_price">Minimum Buy Price:</label>
+                        <input type="number" id="min_price" name="min_price" placeholder="e.g., 100.00" step="0.01" required>
+                        <label for="max_price">Maximum Buy Price:</label>
+                        <input type="number" id="max_price" name="max_price" placeholder="e.g., 150.00" step="0.01" required>
+                        <label for="volume">Trade Volume:</label>
+                        <input type="number" id="volume" name="volume" placeholder="e.g., 10" required>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Triggers</legend>
+                        <label for="trigger_type">Trigger Type:</label>
+                        <select id="trigger_type" name="trigger_type" required>
+                            <option value="price_reach">Price Reaches Value</option>
+                            <option value="volume_change">Volume Change</option>
+                            <option value="percentage_change">Percentage Change</option>
+                        </select>
+                        <label for="trigger_value">Trigger Value:</label>
+                        <input type="text" id="trigger_value" name="trigger_value" placeholder="e.g., $120 or +5%" required>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Notifications</legend>
+                        <label for="notify_method">Notification Method:</label>
+                        <select id="notify_method" name="notify_method">
+                            <option value="email">Email</option>
+                            <option value="telegram">Telegram</option>
+                        </select>
+                        <label for="notify_details">Details (e.g., Email or Telegram Handle):</label>
+                        <input type="text" id="notify_details" name="notify_details" placeholder="e.g., user@example.com">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Automation</legend>
+                        <label>
+                            <input type="checkbox" id="auto_trade" name="auto_trade">
+                            Enable Automated Trading
+                        </label>
+                    </fieldset>
+                    <button type="submit">Save Strategy</button>
+                </form>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
